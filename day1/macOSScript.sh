@@ -23,11 +23,11 @@ case "$answer" in
 	then
 		echo "Installing Homebrew and git, VS code already installed"
 		echo "Press enter"
-		installDependencies=$(/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew install git)
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew install git
 	else
 		echo "Installing Homebrew, git and VScode"
 		echo "Press enter"
-		installDependencies=$(/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew install git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null && brew cask install visual-studio-code)
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && brew install git && ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null && brew cask install visual-studio-code
 	fi
 	#fetches the exit code of the last executed command
 	errorCode=$?
