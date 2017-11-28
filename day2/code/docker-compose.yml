@@ -1,0 +1,10 @@
+version: "2"
+services:
+  my_page_counter_app:
+    image: ungar/week1:part2
+    ports:
+     - "3000:3000"
+    links:
+     - my_redis_container
+  my_redis_container:
+    image: redis
