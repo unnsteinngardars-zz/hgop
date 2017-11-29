@@ -13,12 +13,71 @@ security group name: administrator-security-group
 security group description: administrator-security-group-description
 ip: 10.6.16.58
 
+USING THIS ONE
+new sg: launch-wizard-1
+sg description: launch-wizard-1 created 2017-11-29T15:50:42.544+00:00
+
 install pip and aws cli
 sudo easy_install pip
 pip3 install awscli --upgrade --user
 
 export aws to path
 export PATH=~/Library/Python/3.6/bin:$PATH
+
+
+run aws configure
+
+find AWS secret key ID in iam console under users and security credentials
+create access key
+region name: us-east-2
+output format: text
+
+login to aws cloud magic computer
+ssh -i administrator-key-pair-ohio.pem ec2-user@52.14.149.105
+
+sudo yum update -y
+sudo yum install -y docker
+sudo services docker start
+
+sudo usermod -a -G docker ec2-user
+exit
+login again
+docker info
+
+docker run -d -p 80:3000 ungar/week1:part2 node app.js
+
+
+create ecs
+name hgop-week1
+947730918256.dkr.ecr.eu-west-2.amazonaws.com/hgop-week1
+
+CONSOLE
+aws ecr get-login --no-include-email --region eu-west-2
+
+run command recieved
+
+Tag pre existing docker image with repo
+docker tag ungar/week1:part2 947730918256.dkr.ecr.eu-west-2.amazonaws.com/hgop-week1
+
+Push image to repo
+docker push 947730918256.dkr.ecr.eu-west-2.amazonaws.com/hgop-week1
+
+task definition name: console-sample-app-static
+container name: sample-app
+image: 947730918256.dkr.ecr.eu-west-2.amazonaws.com/hgop-week1:latest
+service name: sample-webapp
+container-name:host-port:container-port = sample-app:80:3000
+
+
+select tasks -> click on task -> click on container instance -> copy public DNS and paste to browser
+
+public DNS: ec2-35-176-71-144.eu-west-2.compute.amazonaws.com
+
+
+
+
+
+
 
 
 might need to know:
