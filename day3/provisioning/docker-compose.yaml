@@ -1,0 +1,6 @@
+version: '3'
+services:
+  web:
+    image: "week1:${TAG}"
+    environment:
+      - TAG=${TAG}
