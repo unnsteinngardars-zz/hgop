@@ -42,16 +42,15 @@ module.exports = {
             client.query(query, (err, res) => {
                 if(err){
                     console.log(err.stack);
-                    client.end();
                 }
                 else{
                     console.log('item inserted successfully');
-                    client.end();
                     console.log(res.rows[0]);
-                    client.end();
                 }
+                client.end();
             });
         });
+        return;
         
     },
 
@@ -69,19 +68,19 @@ module.exports = {
             client.query(query, (err, res) => {
                 if (err){
                     console.log(err.stack);
-                    client.end();
+
                 }
                 else{
                     console.log("items fetched successfully");
-                    client.end();
                     for(var i = 0; i < res.rowCount; i++){
                         rows.push(res.rows[i][0]);
                     }
                     console.log(rows);
-                    client.end();
                 }
+                client.end();
             });
         });
+        return;
         
     }
 }

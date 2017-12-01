@@ -33,7 +33,6 @@ app.get('/items', (req, res) => {
         console.log(msg);
         res.statusCode =200;
         res.send(msg);
-        return;
       }
     });
     // todo
@@ -53,7 +52,6 @@ app.post('/items/:name', (req, res) => {
         console.log(msg);
         res.statusCode = 200;
         res.send(msg);
-        return;
       }
     });
     // todo

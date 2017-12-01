@@ -1,6 +1,13 @@
 INSTANCE_ID=$(cat ./ec2_instance/instance-id.txt)
 INSTANCE_PUBLIC_NAME=$(cat ./ec2_instance/instance-public-name.txt)
 SECURITY_GROUP_NAME=$(cat ./ec2_instance/security-group-name.txt)
+errc=$?
+if [ $errc -ne 0 ];
+then
+echo "Instance id, public name and group name not fetched from files, have to run create script first";
+echo "Exit with error code $errc"
+exit $errc
+fi
 
 status='unknown'
 while [ ! "${status}" == "ok" ]
