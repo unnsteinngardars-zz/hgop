@@ -1,0 +1,17 @@
+version: "2"
+services:
+  my_page_counter_and_item_storage_app:
+    image: ungar/week1:test
+    ports:
+     - "3000:3000"
+    links:
+     - my_redis_container
+  my_redis_container:
+    image: redis
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_USER: 'dissteinn'
+      POSTGRES_DB: 'day4'
