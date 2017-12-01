@@ -1,10 +1,10 @@
 version: "2.0"
 services:
   my_page_counter_app:
-    image: "ungar/week1:${TAG}"
+    image: "ungar/week1:b7a23cdb40e820cbbd9209c44b24e46dcb9d4ab2"
     env_file: .env
     ports:
-      - "3000:3000"
+      - "80:3000"
     links:
       - my_redis_container
   my_redis_container:
