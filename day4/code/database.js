@@ -31,7 +31,6 @@ module.exports = {
     // param name: item name.
     // param insertDate: item insertdate.
     // param onInsert: on item insert callback method.
-
     insert: (name, insertDate, onInsert) => {
         var client = getClient();
         client.connect(() => {
@@ -40,18 +39,12 @@ module.exports = {
                 values: [name, insertDate],
             }
             client.query(query, (err, res) => {
-                if(err){
-                    console.log(err.stack);
-                }
-                else{
-                    console.log('item inserted successfully');
-                    console.log(res.rows[0]);
-                }
+                onInsert(res);
                 client.end();
             });
         });
         return;
-        
+
     },
 
     // Should get the top 10 items sorted by inserteddate descending.
@@ -62,25 +55,13 @@ module.exports = {
         client.connect(() => {
             const query = {
                 text: 'SELECT name FROM Item ORDER BY InsertDate DESC LIMIT 10;',
-                rowMode: 'array',
             }
-            var rows = [];
             client.query(query, (err, res) => {
-                if (err){
-                    console.log(err.stack);
-
-                }
-                else{
-                    console.log("items fetched successfully");
-                    for(var i = 0; i < res.rowCount; i++){
-                        rows.push(res.rows[i][0]);
-                    }
-                    console.log(rows);
-                }
-                client.end();
+              onGet(res);
+              client.end();
             });
         });
         return;
-        
+
     }
 }

@@ -24,15 +24,19 @@ app.get('/', (req, res) => {
   }
 });
 
-// Should return an array of 10 item names.
+//api call to /items which executes the callback function in the database.get function.
+//
 app.get('/items', (req, res) => {
-    database.get(function(error, reply){
-      if(error) {console.error(error) }
+    database.get(function(response){
+      if(!response) {console.error("an error occured ") }
       else{
         var msg = 'items fetched successfully';
         console.log(msg);
+        console.log(reply);
         res.statusCode =200;
+        res.send(response.rows[0])
         res.send(msg);
+        return;
       }
     });
     // todo
@@ -43,15 +47,15 @@ app.get('/items', (req, res) => {
 app.post('/items/:name', (req, res) => {
     var name = req.params.name;
     var date = 'now()';
-    console.log("name " + name);
-    console.log("date " + date);
-    database.insert(name, date, function(error, reply){
-      if(error) { console.error(error) }
-      else{ 
+    database.insert(name, date, function(response) {
+      if(!response){console.log("error occured")}
+      else{
         var msg = 'item inserted successfully';
         console.log(msg);
         res.statusCode = 200;
+        res.send(response.rows.map(name => name.name))
         res.send(msg);
+        return;
       }
     });
     // todo

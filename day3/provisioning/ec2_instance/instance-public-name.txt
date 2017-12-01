@@ -1,1 +1,0 @@
-ec2-52-14-66-40.us-east-2.compute.amazonaws.com
