@@ -24,13 +24,8 @@ function initialize() {
 // give the postgres container a couple of seconds to setup.
 setTimeout(initialize, 10000);
 
-// module.exports: if you are not familiar with NodeJS module.exports is similar to C#/C++ public access modifier.
-// you use it to call functions or access properties from outside the file.
+// export callback functions
 module.exports = {
-    // Should insert an item to the items table.
-    // param name: item name.
-    // param insertDate: item insertdate.
-    // param onInsert: on item insert callback method.
     insert: (name, insertDate, onInsert) => {
         var client = getClient();
         client.connect(() => {
@@ -39,29 +34,25 @@ module.exports = {
                 values: [name, insertDate],
             }
             client.query(query, (err, res) => {
-                onInsert(res);
-                client.end();
+              onInsert(err,res);
+              client.end();
             });
         });
         return;
-
     },
-
-    // Should get the top 10 items sorted by inserteddate descending.
-    // param onGet: on items get callback method.
     get: (onGet) => {
         // todo
         var client = getClient();
         client.connect(() => {
             const query = {
                 text: 'SELECT name FROM Item ORDER BY InsertDate DESC LIMIT 10;',
+                rowMode: 'array'
             }
             client.query(query, (err, res) => {
-              onGet(res);
+              onGet(err, res);
               client.end();
             });
         });
         return;
-
     }
 }
