@@ -41,3 +41,7 @@ When logged in run the following commands
 ## run application
 enter in console
 '''docker run -d -p 80:3000 username/repository:tag node app.js
+
+## link to running instance 
+Instance created and app deployed through scripts
+http://ec2-18-216-73-43.us-east-2.compute.amazonaws.com/

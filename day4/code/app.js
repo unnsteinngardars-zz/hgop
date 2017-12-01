@@ -25,36 +25,29 @@ app.get('/', (req, res) => {
 });
 
 //api call to /items which executes the callback function in the database.get function.
-//
 app.get('/items', (req, res) => {
-    database.get(function(response){
-      if(!response) {console.error("an error occured ") }
+    database.get(function (error, response){
+      if(error) {console.error("an error occured ") }
       else{
         var msg = 'items fetched successfully';
         console.log(msg);
-        console.log(reply);
-        res.statusCode =200;
-        res.send(response.rows[0])
-        res.send(msg);
+        res.send(response.rows.map(value => value.toString()));
         return;
       }
     });
     // todo
 });
 
-// Should add an item to the database.
-
+//api call to /items/name which executes the callback function in the database.insert function.
 app.post('/items/:name', (req, res) => {
     var name = req.params.name;
     var date = 'now()';
-    database.insert(name, date, function(response) {
-      if(!response){console.log("error occured")}
+    database.insert(name, date, function(error, response) {
+      if(error){console.log("error occured")}
       else{
         var msg = 'item inserted successfully';
         console.log(msg);
-        res.statusCode = 200;
-        res.send(response.rows.map(name => name.name))
-        res.send(msg);
+        res.send(response.rows[0]);
         return;
       }
     });
