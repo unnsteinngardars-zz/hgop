@@ -1,0 +1,241 @@
+Loaded plugins: priorities, update-motd, upgrade-helper
+No packages marked for update
+sudo: apt-get: command not found
+sudo: apt-get: command not found
+/var/lib/cloud/instance/scripts/part-001: line 8: sudp: command not found
+--2017-12-04 14:50:56--  http://pkg.jenkins.io/redhat/jenkins.repo
+Resolving pkg.jenkins.io (pkg.jenkins.io)... 52.202.51.185
+Connecting to pkg.jenkins.io (pkg.jenkins.io)|52.202.51.185|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 71
+Saving to: ‘/etc/yum.repos.d/jenkins.repo’
+
+     0K                                                       100% 17.5M=0s
+
+2017-12-04 14:50:56 (17.5 MB/s) - ‘/etc/yum.repos.d/jenkins.repo’ saved [71/71]
+
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.7.0-openjdk.x86_64 1:1.7.0.151-2.6.11.0.74.amzn1 will be erased
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-common-1.1.0-1.9.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-as-1.0.61.6-1.0.amzn1.noarch
+--> Running transaction check
+---> Package aws-apitools-as.noarch 0:1.0.61.6-1.0.amzn1 will be erased
+---> Package aws-apitools-common.noarch 0:1.1.0-1.9.amzn1 will be erased
+---> Package aws-apitools-ec2.noarch 0:1.7.3.0-1.0.amzn1 will be erased
+---> Package aws-apitools-elb.noarch 0:1.0.35.0-1.0.amzn1 will be erased
+---> Package aws-apitools-mon.noarch 0:1.0.20.0-1.0.amzn1 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch    Version                          Repository  Size
+================================================================================
+Removing:
+ java-1.7.0-openjdk   x86_64  1:1.7.0.151-2.6.11.0.74.amzn1    installed   91 M
+Removing for dependencies:
+ aws-apitools-as      noarch  1.0.61.6-1.0.amzn1               installed  7.1 M
+ aws-apitools-common  noarch  1.1.0-1.9.amzn1                  installed  915  
+ aws-apitools-ec2     noarch  1.7.3.0-1.0.amzn1                installed   17 M
+ aws-apitools-elb     noarch  1.0.35.0-1.0.amzn1               installed  7.8 M
+ aws-apitools-mon     noarch  1.0.20.0-1.0.amzn1               installed  6.9 M
+
+Transaction Summary
+================================================================================
+Remove  1 Package (+5 Dependent packages)
+
+Installed size: 130 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch                   1/6 
+  Erasing    : aws-apitools-as-1.0.61.6-1.0.amzn1.noarch                    2/6 
+  Erasing    : aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch                   3/6 
+  Erasing    : aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch                    4/6 
+  Erasing    : aws-apitools-common-1.1.0-1.9.amzn1.noarch                   5/6 
+  Erasing    : 1:java-1.7.0-openjdk-1.7.0.151-2.6.11.0.74.amzn1.x86_64      6/6 
+  Verifying  : 1:java-1.7.0-openjdk-1.7.0.151-2.6.11.0.74.amzn1.x86_64      1/6 
+  Verifying  : aws-apitools-common-1.1.0-1.9.amzn1.noarch                   2/6 
+  Verifying  : aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch                    3/6 
+  Verifying  : aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch                   4/6 
+  Verifying  : aws-apitools-as-1.0.61.6-1.0.amzn1.noarch                    5/6 
+  Verifying  : aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch                   6/6 
+
+Removed:
+  java-1.7.0-openjdk.x86_64 1:1.7.0.151-2.6.11.0.74.amzn1                       
+
+Dependency Removed:
+  aws-apitools-as.noarch 0:1.0.61.6-1.0.amzn1                                   
+  aws-apitools-common.noarch 0:1.1.0-1.9.amzn1                                  
+  aws-apitools-ec2.noarch 0:1.7.3.0-1.0.amzn1                                   
+  aws-apitools-elb.noarch 0:1.0.35.0-1.0.amzn1                                  
+  aws-apitools-mon.noarch 0:1.0.20.0-1.0.amzn1                                  
+
+Complete!
+Loaded plugins: priorities, update-motd, upgrade-helper
+Existing lock /var/run/yum.pid: another copy is running as pid 2669.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  30 M RSS (278 MB VSZ)
+    Started: Mon Dec  4 14:50:57 2017 - 00:01 ago
+    State  : Running, pid: 2669
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.151-1.b12.35.amzn1 will be installed
+--> Processing Dependency: java-1.8.0-openjdk-headless(x86-64) = 1:1.8.0.151-1.b12.35.amzn1 for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjvm.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjli.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjava.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjvm.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjli.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libjava.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: libawt.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Running transaction check
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.151-1.b12.35.amzn1 will be installed
+--> Processing Dependency: copy-jdk-configs >= 1.1-3 for package: 1:java-1.8.0-openjdk-headless-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.151-1.b12.35.amzn1.x86_64
+--> Running transaction check
+---> Package copy-jdk-configs.noarch 0:1.2-1.2.amzn1 will be installed
+---> Package lksctp-tools.x86_64 0:1.0.10-7.7.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                   Arch   Version                    Repository    Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk        x86_64 1:1.8.0.151-1.b12.35.amzn1 amzn-updates 244 k
+Installing for dependencies:
+ copy-jdk-configs          noarch 1.2-1.2.amzn1              amzn-main     13 k
+ java-1.8.0-openjdk-headless
+                           x86_64 1:1.8.0.151-1.b12.35.amzn1 amzn-updates  39 M
+ lksctp-tools              x86_64 1.0.10-7.7.amzn1           amzn-main     89 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 39 M
+Installed size: 103 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                               11 MB/s |  39 MB  00:03     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : copy-jdk-configs-1.2-1.2.amzn1.noarch                        1/4 
+  Installing : lksctp-tools-1.0.10-7.7.amzn1.x86_64                         2/4 
+  Installing : 1:java-1.8.0-openjdk-headless-1.8.0.151-1.b12.35.amzn1.x86   3/4 
+  Installing : 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64         4/4 
+  Verifying  : lksctp-tools-1.0.10-7.7.amzn1.x86_64                         1/4 
+  Verifying  : copy-jdk-configs-1.2-1.2.amzn1.noarch                        2/4 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.151-1.b12.35.amzn1.x86_64         3/4 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.151-1.b12.35.amzn1.x86   4/4 
+
+Installed:
+  java-1.8.0-openjdk.x86_64 1:1.8.0.151-1.b12.35.amzn1                          
+
+Dependency Installed:
+  copy-jdk-configs.noarch 0:1.2-1.2.amzn1                                       
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.151-1.b12.35.amzn1                 
+  lksctp-tools.x86_64 0:1.0.10-7.7.amzn1                                        
+
+Complete!
+Loaded plugins: priorities, update-motd, upgrade-helper
+Existing lock /var/run/yum.pid: another copy is running as pid 2713.
+Another app is currently holding the yum lock; waiting for it to exit...
+  The other application is: yum
+    Memory :  37 M RSS (284 MB VSZ)
+    Started: Mon Dec  4 14:51:09 2017 - 00:01 ago
+    State  : Running, pid: 2713
+Resolving Dependencies
+--> Running transaction check
+---> Package docker.x86_64 0:17.06.2ce-1.93.amzn1 will be installed
+--> Processing Dependency: xfsprogs for package: docker-17.06.2ce-1.93.amzn1.x86_64
+--> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-17.06.2ce-1.93.amzn1.x86_64
+--> Processing Dependency: libltdl.so.7()(64bit) for package: docker-17.06.2ce-1.93.amzn1.x86_64
+--> Running transaction check
+---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+---> Package libtool-ltdl.x86_64 0:2.4.2-20.4.8.5.32.amzn1 will be installed
+---> Package xfsprogs.x86_64 0:4.5.0-9.21.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch       Version                     Repository        Size
+================================================================================
+Installing:
+ docker           x86_64     17.06.2ce-1.93.amzn1        amzn-updates      25 M
+Installing for dependencies:
+ libseccomp       x86_64     2.3.1-2.4.amzn1             amzn-main         79 k
+ libtool-ltdl     x86_64     2.4.2-20.4.8.5.32.amzn1     amzn-main         51 k
+ xfsprogs         x86_64     4.5.0-9.21.amzn1            amzn-main        1.7 M
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 27 M
+Installed size: 80 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              6.0 MB/s |  27 MB  00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libseccomp-2.3.1-2.4.amzn1.x86_64                            1/4 
+  Installing : libtool-ltdl-2.4.2-20.4.8.5.32.amzn1.x86_64                  2/4 
+  Installing : xfsprogs-4.5.0-9.21.amzn1.x86_64                             3/4 
+  Installing : docker-17.06.2ce-1.93.amzn1.x86_64                           4/4 
+  Verifying  : docker-17.06.2ce-1.93.amzn1.x86_64                           1/4 
+  Verifying  : xfsprogs-4.5.0-9.21.amzn1.x86_64                             2/4 
+  Verifying  : libtool-ltdl-2.4.2-20.4.8.5.32.amzn1.x86_64                  3/4 
+  Verifying  : libseccomp-2.3.1-2.4.amzn1.x86_64                            4/4 
+
+Installed:
+  docker.x86_64 0:17.06.2ce-1.93.amzn1                                          
+
+Dependency Installed:
+  libseccomp.x86_64 0:2.3.1-2.4.amzn1                                           
+  libtool-ltdl.x86_64 0:2.4.2-20.4.8.5.32.amzn1                                 
+  xfsprogs.x86_64 0:4.5.0-9.21.amzn1                                            
+
+Complete!
+Starting cgconfig service: [  OK  ]
+Starting docker:	.[  OK  ]
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package jenkins.noarch 0:2.93-1.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch             Version             Repository         Size
+================================================================================
+Installing:
+ jenkins           noarch           2.93-1.1            jenkins            71 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 71 M
+Installed size: 71 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
